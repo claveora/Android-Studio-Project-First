@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorScreenBackground"
+    tools:context=".FormActivity">
+
+    <LinearLayout
+        android:id="@+id/MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Form Pendaftaran"
+            android:textAlignment="center"
+            android:textColor="#A1866F"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coffeeenak.id"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp" />
+
+        <!-- Input Nama -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan Nama Anda"
+                android:inputType="textPersonName"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Input Alamat -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan Alamat Anda"
+                android:inputType="textPostalAddress|textMultiLine"
+                android:minLines="0"
+                android:maxLines="5"
+                android:gravity="top"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Input Nomor HP -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNomor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNomor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukan Nomor HP"
+                android:inputType="phone"
+                android:maxLength="15"
+                android:textColorHint="@android:color/darker_gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Button Simpan -->
+        <Button
+            android:id="@+id/btSimpan"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:minHeight="48dp"
+            android:text="Simpan"
+            android:textColor="@color/colorButtonText" />
+
+        <!-- Label Agama -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agama"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp" />
+
+        <Spinner
+            android:id="@+id/spAgama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Label Gender -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp">
+
+            <RadioButton
+                android:id="@+id/laki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laki-laki"
+                android:minHeight="48dp"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_marginEnd="16dp" />
+
+            <RadioButton
+                android:id="@+id/perempuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perempuan"
+                android:minHeight="48dp"
+                android:textColor="@color/colorPrimaryText" />
+
+        </RadioGroup>
+
+        <!-- Label Hobi -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hobi"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp" />
+
+        <CheckBox
+            android:id="@+id/cbMembaca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Membaca"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:minHeight="48dp"
+            android:layout_marginStart="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbMenulis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menulis"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:minHeight="48dp"
+            android:layout_marginStart="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbMusik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mendengarkan Musik"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:minHeight="48dp"
+            android:layout_marginStart="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbMemasak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Memasak"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryText"
+            android:minHeight="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

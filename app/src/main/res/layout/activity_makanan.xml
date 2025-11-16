@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main"
+    android:background="@color/colorScreenBackground"
+    tools:context=".makanan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Judul -->
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Form Pemesanan"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Input Nama -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutNama"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan nama Anda"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Tanggal-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layouttanggal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ettanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tanggal"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Bagian Makanan -->
+        <TextView
+            android:id="@+id/tvMakanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Makanan"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Item: Soto Ayam -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgSoto"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/soto"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Soto Ayam" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Soto Ayam"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 8.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahSoto"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgNasgor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/nasgor"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Nasgor" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nasi Goreng"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 15.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahNasgor"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Item: Sop Daging -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgSop"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/sop"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Sop Daging" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sop Daging"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 10.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahSop"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Bagian Minuman -->
+        <TextView
+            android:id="@+id/tvMinuman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minuman"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Item: Es Teh -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:clipToOutline="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgEsTeh"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/esteh"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Es Teh" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Es Teh"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 3.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahEsTeh"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Item: Es Anget -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:clipToOutline="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgEsJeruk"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/esjeruk"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Es Jeruk" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Es Jeruk"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 4.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahEsJeruk"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout><LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="2dp"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:clipToOutline="true">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgkupi"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/kupi"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Kopi" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kopi Claveooka"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 25.000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/jumlahKupi"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Tombol Lanjut -->
+        <Button
+            android:id="@+id/btnLanjut"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:layout_height="wrap_content"
+            android:text="Lanjut ke Nota"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorButtonText"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

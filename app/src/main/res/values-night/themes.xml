@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorScreenBackground">#121212</color>
+    <color name="colorCardBackground">#1E1E1E</color>
+    <color name="colorPrimaryText">#FFFFFF</color>
+
+
+    <!-- res/values-night/colors.xml (Mode Gelap) -->
+    <color name="colorHint">#666666</color>
+    <style name="Base.Theme.AplikasiPertama" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+    </style>
+    <style name="Theme.AplikasiPertama" parent="Base.Theme.AplikasiPertama" />
+
+</resources>

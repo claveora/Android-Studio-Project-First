@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Aplikasi Pertama</string>
+    <string-array name="list_agama">
+        <item>Islam</item>
+        <item>Kristen</item>
+        <item>Katholik</item>
+        <item>Hindu</item>
+        <item>Buddha</item>
+        <item>Konghucu</item>
+    </string-array>
+
+
+</resources>

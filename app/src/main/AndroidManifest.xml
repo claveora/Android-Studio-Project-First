@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AplikasiPertama">
+        <activity
+            android:name=".Kalkulator"
+            android:exported="false" />
+        <activity
+            android:name=".Profil"
+            android:exported="false" />
+        <activity
+            android:name=".exit"
+            android:exported="false" />
+        <activity
+            android:name=".nota"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".makanan"
+            android:exported="false" />
+        <activity
+            android:name=".hasillform"
+            android:exported="false" />
+        <activity
+            android:name=".tugaspertama"
+            android:exported="false" />
+        <activity
+            android:name=".CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contrains2"
+            android:exported="false" />
+        <activity
+            android:name=".ConstrainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".FormActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
