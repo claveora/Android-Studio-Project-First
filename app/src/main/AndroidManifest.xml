@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiPertama">
         <activity
+            android:name=".Temperatur"
+            android:exported="false" />
+        <activity
             android:name=".Kalkulator"
             android:exported="false" />
         <activity
