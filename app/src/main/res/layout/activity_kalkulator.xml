@@ -17,7 +17,7 @@
         android:hint="0"
         android:textAlignment="textEnd"
         android:textSize="72sp"
-        android:textColor="#FFFFFF"
+        android:textColor="?attr/colorOnSurface"
         android:textColorHint="#666666"
         android:inputType="none"
         android:background="@android:color/transparent"

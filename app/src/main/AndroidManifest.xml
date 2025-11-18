@@ -24,7 +24,7 @@
             android:name=".Profil"
             android:exported="false" />
         <activity
-            android:name=".exit"
+            android:name=".ExitConfirmationFragment"
             android:exported="false" />
         <activity
             android:name=".nota"
@@ -46,12 +46,6 @@
             android:exported="false" />
         <activity
             android:name=".CardActivity"
-            android:exported="false" />
-        <activity
-            android:name=".contrains2"
-            android:exported="false" />
-        <activity
-            android:name=".ConstrainActivity2"
             android:exported="false" />
         <activity
             android:name=".FormActivity"
