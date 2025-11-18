@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiPertama">
         <activity
+            android:name=".makanan"
+            android:exported="false" />
+        <activity
             android:name=".Temperatur"
             android:exported="false" />
         <activity
@@ -35,9 +38,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".makanan"
-            android:exported="false" />
         <activity
             android:name=".hasillform"
             android:exported="false" />
