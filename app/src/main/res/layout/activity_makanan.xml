@@ -5,6 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".makanan">
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Menu Pesanan"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#A1866F"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/colorScreenBackground"
+        app:layout_constraintTop_toTopOf="@id/judul"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
