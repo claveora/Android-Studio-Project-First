@@ -1,6 +1,7 @@
 package com.byatara.aplikasipertama
 
 import android.content.Intent
+import android.health.connect.datatypes.units.Temperature
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
@@ -82,6 +83,8 @@ class tugaspertama : AppCompatActivity(), ExitConfirmationFragment.ExitDialogLis
         }
 
         cardMenuTemperature.setOnClickListener {
+            val intent = Intent(this, Temperatur::class.java)
+            startActivity(intent)
             Toast.makeText(this, "Temperatur Diklik", Toast.LENGTH_SHORT).show()
         }
 
