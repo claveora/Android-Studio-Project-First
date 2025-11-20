@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
-                android:text="Kopi Creamy Latte"
+                android:text="Creamy Latte"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -84,7 +84,7 @@
             <!-- Input Nominal (Kanan Atas, disamping judul) -->
             <EditText
                 android:id="@+id/et_nominal"
-                android:layout_width="80dp"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:hint="Jumlah"
                 android:inputType="number"
@@ -117,6 +117,210 @@
 
                 <RadioButton
                     android:id="@+id/rb_panas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panas"
+                    android:textSize="14sp"/>
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_menu2"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_menu1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Gambar Menu (Kiri) -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_menu_icon2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/nasgor"
+                app:civ_border_color="?attr/colorOnSurface"
+                app:civ_border_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Judul Minuman -->
+            <TextView
+                android:id="@+id/tv_menu_americano"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Americano"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_menu_icon2"
+                app:layout_constraintTop_toTopOf="@id/iv_menu_icon2"
+                app:layout_constraintEnd_toStartOf="@+id/et_nominal2" />
+
+            <!-- Harga -->
+            <TextView
+                android:id="@+id/tv_menu_price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 15.000"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
+                app:layout_constraintTop_toBottomOf="@id/tv_menu_americano" />
+
+            <!-- Input Nominal (Kanan Atas, disamping judul) -->
+            <EditText
+                android:id="@+id/et_nominal2"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:hint="Jumlah"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:padding="8dp"
+                app:tint="?attr/colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2"/>
+
+            <!-- Pilihan Es / Panas (Radio Group) -->
+            <RadioGroup
+                android:id="@+id/rg_temperature2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
+                app:layout_constraintTop_toBottomOf="@id/tv_menu_price2"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <RadioButton
+                    android:id="@+id/rb_es2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Es"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <RadioButton
+                    android:id="@+id/rb_panas2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panas"
+                    android:textSize="14sp"/>
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_menu3"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_menu2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Gambar Menu (Kiri) -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_menu_icon3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/nasgor"
+                app:civ_border_color="?attr/colorOnSurface"
+                app:civ_border_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Judul Minuman -->
+            <TextView
+                android:id="@+id/tv_menu_latte"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Latte"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_menu_icon3"
+                app:layout_constraintTop_toTopOf="@id/iv_menu_icon3"
+                app:layout_constraintEnd_toStartOf="@+id/et_nominal3" />
+
+            <!-- Harga -->
+            <TextView
+                android:id="@+id/tv_menu_price3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp. 15.000"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/tv_menu_latte"
+                app:layout_constraintTop_toBottomOf="@id/tv_menu_latte" />
+
+            <!-- Input Nominal (Kanan Atas, disamping judul) -->
+            <EditText
+                android:id="@+id/et_nominal3"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:hint="Jumlah"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:padding="8dp"
+                app:tint="?attr/colorOnSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3"/>
+
+            <!-- Pilihan Es / Panas (Radio Group) -->
+            <RadioGroup
+                android:id="@+id/rg_temperature3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/tv_menu_latte"
+                app:layout_constraintTop_toBottomOf="@id/tv_menu_price3"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <RadioButton
+                    android:id="@+id/rb_es3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Es"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <RadioButton
+                    android:id="@+id/rb_panas3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Panas"
