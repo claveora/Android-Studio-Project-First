@@ -5,31 +5,45 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:background="@color/colorScreenBackground"
+    android:padding="16dp"
     tools:context=".makanan">
 
-    <!-- Judul Menu Pesanan (Tidak Diubah) -->
+    <!-- Judul Menu Pesanan -->
     <TextView
         android:id="@+id/judul"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Menu Pesanan"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#A1866F"
         android:gravity="center"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coffeeenak.id"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/judul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- CardView Menu Makanan/Minuman (Diubah) -->
+    <!-- CardView Menu 1 -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_menu1"
         style="@style/Widget.Material3.CardView.Filled"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
         app:cardCornerRadius="16dp"
         app:strokeWidth="0dp"
@@ -42,7 +56,6 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Gambar Menu (Kiri) -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_menu_icon"
                 android:layout_width="80dp"
@@ -54,7 +67,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <!-- Judul Minuman -->
             <TextView
                 android:id="@+id/tv_menu_name"
                 android:layout_width="0dp"
@@ -69,7 +81,6 @@
                 app:layout_constraintTop_toTopOf="@id/iv_menu_icon"
                 app:layout_constraintEnd_toStartOf="@+id/et_nominal" />
 
-            <!-- Harga -->
             <TextView
                 android:id="@+id/tv_menu_price"
                 android:layout_width="wrap_content"
@@ -81,7 +92,6 @@
                 app:layout_constraintStart_toStartOf="@id/tv_menu_name"
                 app:layout_constraintTop_toBottomOf="@id/tv_menu_name" />
 
-            <!-- Input Nominal (Kanan Atas, disamping judul) -->
             <EditText
                 android:id="@+id/et_nominal"
                 android:layout_width="65dp"
@@ -96,7 +106,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/tv_menu_price"/>
 
-            <!-- Pilihan Es / Panas (Radio Group) -->
             <RadioGroup
                 android:id="@+id/rg_temperature"
                 android:layout_width="0dp"
@@ -125,6 +134,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <!-- CardView Menu 2 -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_menu2"
         style="@style/Widget.Material3.CardView.Filled"
@@ -144,7 +155,6 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Gambar Menu (Kiri) -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_menu_icon2"
                 android:layout_width="80dp"
@@ -156,7 +166,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <!-- Judul Minuman -->
             <TextView
                 android:id="@+id/tv_menu_americano"
                 android:layout_width="0dp"
@@ -171,7 +180,6 @@
                 app:layout_constraintTop_toTopOf="@id/iv_menu_icon2"
                 app:layout_constraintEnd_toStartOf="@+id/et_nominal2" />
 
-            <!-- Harga -->
             <TextView
                 android:id="@+id/tv_menu_price2"
                 android:layout_width="wrap_content"
@@ -183,7 +191,6 @@
                 app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
                 app:layout_constraintTop_toBottomOf="@id/tv_menu_americano" />
 
-            <!-- Input Nominal (Kanan Atas, disamping judul) -->
             <EditText
                 android:id="@+id/et_nominal2"
                 android:layout_width="65dp"
@@ -198,7 +205,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2"/>
 
-            <!-- Pilihan Es / Panas (Radio Group) -->
             <RadioGroup
                 android:id="@+id/rg_temperature2"
                 android:layout_width="0dp"
@@ -227,6 +233,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <!-- CardView Menu 3 -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_menu3"
         style="@style/Widget.Material3.CardView.Filled"
@@ -246,7 +254,6 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Gambar Menu (Kiri) -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_menu_icon3"
                 android:layout_width="80dp"
@@ -258,7 +265,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <!-- Judul Minuman -->
             <TextView
                 android:id="@+id/tv_menu_latte"
                 android:layout_width="0dp"
@@ -273,7 +279,6 @@
                 app:layout_constraintTop_toTopOf="@id/iv_menu_icon3"
                 app:layout_constraintEnd_toStartOf="@+id/et_nominal3" />
 
-            <!-- Harga -->
             <TextView
                 android:id="@+id/tv_menu_price3"
                 android:layout_width="wrap_content"
@@ -285,7 +290,6 @@
                 app:layout_constraintStart_toStartOf="@id/tv_menu_latte"
                 app:layout_constraintTop_toBottomOf="@id/tv_menu_latte" />
 
-            <!-- Input Nominal (Kanan Atas, disamping judul) -->
             <EditText
                 android:id="@+id/et_nominal3"
                 android:layout_width="65dp"
@@ -300,7 +304,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3"/>
 
-            <!-- Pilihan Es / Panas (Radio Group) -->
             <RadioGroup
                 android:id="@+id/rg_temperature3"
                 android:layout_width="0dp"
@@ -329,5 +332,20 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <!-- Tombol Lanjutkan (Dibuat Center) -->
+    <Button
+        android:id="@+id/btn_lanjut"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/card_menu3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Lanjutkan"
+        android:gravity="center"
+        android:textColor="@color/colorButtonText"
+        android:backgroundTint="@color/colorButtonBackground"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

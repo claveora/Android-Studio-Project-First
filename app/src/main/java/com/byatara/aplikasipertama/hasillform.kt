@@ -47,7 +47,7 @@ class hasillform : AppCompatActivity() {
         tvAlamat.text = "Alamat: $alamat"
         tvNomor.text = "Nomor HP: $nohp"
         tvAgama.text = "Agama: $agama"
-        tvGender.text = "Jenis Kelamin: $gender"
+        tvGender.text = "Gender: $gender"
         tvHobi.text = "Hobi: $hobi"
     }
 }

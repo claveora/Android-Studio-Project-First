@@ -1,155 +1,100 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".nota"
     android:background="@color/colorScreenBackground"
-    tools:context=".nota">
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/nota"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Nota Transaksi"
-        android:textColor="#A1866F"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/brand"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Coffeeenakk.id"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/nota"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp" />
-
-    <TextView
-        android:id="@+id/pemesan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Nama : "
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/brand"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tanggal : "
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/pemesan"/>
+        android:orientation="vertical">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/pemesan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nota Pesanan"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#A1866F"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
 
-    <TextView
-        android:id="@+id/tvMenuHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/divider"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/jumlah" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coffeeenak.id"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="50dp"/>
 
-    <TextView
-        android:id="@+id/jumlah"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Jumlah"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/harga"
-        app:layout_constraintStart_toEndOf="@id/tvMenuHeader"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="14dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+            app:cardElevation="6dp">
 
-    <TextView
-        android:id="@+id/harga"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Harga"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/jumlah"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-    <View
-        android:id="@+id/garismenu"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/jumlah"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/menu1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/garismenu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar Pesanan:"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="12dp"/>
 
-    <View
-        android:id="@+id/garisbayar"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/menu1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+                <LinearLayout
+                    android:id="@+id/containerPesanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
 
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Total"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/garisbayar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnKembali"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="Bayar"
-        android:textColor="@color/colorButtonText"
-        android:backgroundTint="@color/colorButtonBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/total" />
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Total: Rp0"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnSelesai"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Bayar"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>
