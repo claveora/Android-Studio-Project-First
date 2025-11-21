@@ -12,7 +12,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
+        android:padding="16dp"
         tools:context=".Temperatur">
 
         <!-- Judul Aplikasi -->
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:entries="@array/temperature_units"
                     android:padding="12dp"
-                    app:tint="?attr/colorOnSurface"
+                    app:tint="?attr/colorSurfaceContainerHigh"
                     android:spinnerMode="dropdown"/>
 
                 <View
@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:entries="@array/temperature_units"
                     android:padding="12dp"
-                    app:tint="?attr/colorOnSurface"
+                    app:tint="?attr/colorSurfaceContainerHigh"
                     android:spinnerMode="dropdown"/>
 
             </LinearLayout>
@@ -165,7 +165,7 @@
             android:id="@+id/btn_convert"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="KONVERSI SEKARANG"
+            android:text="Konversikan"
             android:paddingTop="14dp"
             android:paddingBottom="14dp"
             android:textSize="15sp"
