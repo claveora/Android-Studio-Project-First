@@ -6,79 +6,105 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/colorScreenBackground"
     tools:context=".Profil">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp"> <TextView
-        android:id="@+id/tv_header_profil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Profil"
-        android:textColor="?attr/colorOnSurface"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingHorizontal="12dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_profile_icon"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="32dp"
-            android:src="@drawable/main"
-            app:civ_border_color="?attr/colorOnSurface"
-            app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_header_profil"
-            tools:src="@drawable/main"/>
+        <!-- Header Section -->
         <TextView
-            android:id="@+id/tv_profile_name"
+            android:id="@+id/tv_header_profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Byatara Ade W."
+            android:text="Profil"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="18sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_profile_icon" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_edit_name"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
+        <!-- Profile Card Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_profile_header"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingHorizontal="24dp"
-            android:text="Edit Profil Kamu"
-            android:textColor="@color/colorPrimaryText"
-            app:backgroundTint="?attr/colorSurfaceContainerHigh"
-            app:cornerRadius="24dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_header_profil">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/main"
+                    app:civ_border_color="?attr/colorPrimary"
+                    app:civ_border_width="3dp"
+                    tools:src="@drawable/main" />
+
+                <TextView
+                    android:id="@+id/tv_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Byatara Ade W."
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="byan.byatara@gmail.com"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_profile_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_edit_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingHorizontal="32dp"
+                    android:text="Edit Profil Kamu"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="12sp"
+                    app:backgroundTint="?attr/colorSurfaceContainerHigh"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cards Container Row 1 -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_data_pribadi"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="6dp"
             app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
             app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/card_data_aktivitas"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_edit_name">
+            app:layout_constraintTop_toBottomOf="@id/card_profile_header"
+            app:layout_constraintWidth_percent="0.48">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -86,15 +112,24 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data Pribadi"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/birth"
                         app:tint="?attr/colorOnSurface"
                         android:contentDescription="Ikon Ulang Tahun" />
@@ -102,11 +137,11 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Ulang Tahun"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_ultah_value"
@@ -114,21 +149,21 @@
                         android:layout_height="wrap_content"
                         android:text="31/05/2008"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        tools:text="31/05/2008"/>
+                        tools:text="31/05/2008" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/gender"
                         app:tint="?attr/colorOnSurface"
                         android:contentDescription="Ikon Gender" />
@@ -136,11 +171,11 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Gender"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_gender_value"
@@ -148,9 +183,9 @@
                         android:layout_height="wrap_content"
                         android:text="Laki-laki"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        tools:text="Laki-laki"/>
+                        tools:text="Laki-laki" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -160,14 +195,15 @@
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="6dp"
             app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
             app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
+            app:cardElevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_data_pribadi">
+            app:layout_constraintStart_toEndOf="@id/card_data_pribadi"
+            app:layout_constraintTop_toBottomOf="@id/card_profile_header"
+            app:layout_constraintWidth_percent="0.48">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -175,15 +211,24 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aktivitas"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/scholl"
                         app:tint="?attr/colorOnSurface"
                         android:contentDescription="Ikon Sekolah" />
@@ -191,69 +236,74 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Sekolah"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/tv_orderan_value" android:layout_width="wrap_content"
+                        android:id="@+id/tv_orderan_value"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SMKN 6 Surakarta"
+                        android:text="SMKN 6"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
-                        tools:text="SMKN 6 Surakarta"/>
+                        tools:text="SMKN 6" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:tint="?attr/colorOnSurface"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/kelas"
+                        app:tint="?attr/colorOnSurface"
                         android:contentDescription="Ikon Kelas" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Kelas"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/tv_ulasan_value" android:layout_width="wrap_content"
+                        android:id="@+id/tv_ulasan_value"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="11 RPL"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
-                        tools:text="11 RPL"/>
+                        tools:text="11 RPL" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cards Container Row 2 -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_data_portofolio"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
             app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
             app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toStartOf="@id/card_data_koding"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_data_aktivitas">
+            app:layout_constraintTop_toBottomOf="@id/card_data_pribadi"
+            app:layout_constraintWidth_percent="0.48">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,87 +311,98 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Portofolio"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/music"
                         app:tint="?attr/colorOnSurface"
-                        android:contentDescription="Ikon Sekolah" />
+                        android:contentDescription="Ikon Musik" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Lagu"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvmusic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Berdansalah Karir"
+                        android:text="Berdansa"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
-                        tools:text="Berdansalah Karir"/>
+                        tools:text="Berdansa" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:tint="?attr/colorOnSurface"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/hoby"
-                        android:contentDescription="Ikon Kelas" />
+                        app:tint="?attr/colorOnSurface"
+                        android:contentDescription="Ikon Hobi" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
-                        android:text="Hoby"
+                        android:text="Hobi"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvhoby"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Memainkan Alat Musik"
+                        android:text="Musik"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
-                        tools:text="Memainkan Alat Musik"/>
+                        tools:text="Musik" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_data_koding"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="6dp"
             app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
             app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
+            app:cardElevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_data_portofolio">
+            app:layout_constraintStart_toEndOf="@id/card_data_portofolio"
+            app:layout_constraintTop_toBottomOf="@id/card_data_aktivitas"
+            app:layout_constraintWidth_percent="0.48">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -349,27 +410,36 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pemrograman"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/programming"
                         app:tint="?attr/colorOnSurface"
-                        android:contentDescription="Ikon Sekolah" />
+                        android:contentDescription="Ikon Bahasa" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
-                        android:text="Pemrograman"
+                        android:text="Bahasa"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvkodingbhs"
@@ -377,33 +447,33 @@
                         android:layout_height="wrap_content"
                         android:text="JavaScript"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
-                        tools:text="JavaScript"/>
+                        tools:text="JavaScript" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:tint="?attr/colorOnSurface"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/framework"
-                        android:contentDescription="Ikon Kelas" />
+                        app:tint="?attr/colorOnSurface"
+                        android:contentDescription="Ikon Framework" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:text="Framework"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvframework"
@@ -411,11 +481,12 @@
                         android:layout_height="wrap_content"
                         android:text="Next.js"
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="16sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
-                        tools:text="Next.js"/>
+                        tools:text="Next.js" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout> </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
