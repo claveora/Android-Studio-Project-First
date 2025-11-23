@@ -5,13 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/colorScreenBackground"
     tools:context=".tugaspertama">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image_main"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/main"
@@ -28,7 +29,7 @@
         android:layout_marginEnd="16dp"
         android:text="Hai, Byatara!"
         android:textColor="?attr/colorOnSurface"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/profile_image_main"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,274 +37,287 @@
         app:layout_constraintTop_toTopOf="@id/profile_image_main" />
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image_main">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="16dp">
+            android:orientation="vertical">
 
-            <TextView
+            <!-- Container Card Utama - Semua Menu dalam Satu Card Besar -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Menu Utama"
-                android:textColor="?attr/colorOnSurface"
-                android:textStyle="bold"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/layout_menu_utama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_list"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/list"
-                            android:tint="?attr/colorOnSurface"
-                            tools:ignore="ContentDescription" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Menu"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_form"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/form"
-                            android:tint="?attr/colorOnSurface"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Form"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_calculator"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/calculator"
-                            android:tint="?attr/colorOnSurface"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Kalkulator"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="Menu Lain"
-                android:textColor="?attr/colorOnSurface"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
 
-            <LinearLayout
-                android:id="@+id/layout_menu_kedua"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_temperature"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu Aplikasi"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
 
+                    <!-- Baris 1: 3 Card -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/temperature"
-                            android:tint="?attr/colorOnSurface"
-                            tools:ignore="ContentDescription" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_list"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Temperatur"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/list"
+                                    app:tint="?attr/colorOnSurface"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Menu"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_form"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/form"
+                                    app:tint="?attr/colorOnSurface"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Form"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_calculator"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/calculator"
+                                    app:tint="?attr/colorOnSurface"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:id="@+id/tv_menu_calculator"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Kalkulator"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_contact"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorSurfaceContainer"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
-
+                    <!-- Baris 2: 3 Card -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/cs"
-                            android:tint="?attr/colorOnSurface"
-                            tools:ignore="ContentDescription" />
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_temperature"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Kontak Kami"
-                            android:textColor="?attr/colorOnSurface"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/temperature"
+                                    app:tint="?attr/colorOnSurface"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Temperatur"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_contact"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginHorizontal="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/cs"
+                                    app:tint="?attr/colorOnSurface"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Kontak Kami"
+                                    android:textColor="?attr/colorOnSurface"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_menu_exit"
+                            style="@style/Widget.Material3.CardView.Elevated"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="?attr/colorError"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:src="@drawable/exit"
+                                    app:tint="?attr/colorOnError"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Keluar"
+                                    android:textColor="?attr/colorOnError"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_menu_exit"
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="?attr/colorError"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    app:strokeWidth="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/exit"
-                            android:tint="?attr/colorOnError"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Keluar"
-                            android:textColor="?attr/colorOnError"
-                            android:textStyle="bold"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

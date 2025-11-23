@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorScreenBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".Temperatur">
+
+        <!-- Judul Aplikasi -->
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Konverter Suhu Interaktif"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#A1866F"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Deskripsi -->
+        <TextView
+            android:id="@+id/kopienak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coffeeenak.id"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/judul"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp" />
+
+        <!-- KARTU INPUT NILAI -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_input"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+            app:layout_constraintTop_toBottomOf="@id/kopienak"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:tint="?attr/colorOnSurface">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suhu Awal"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="8dp"/>
+
+                <EditText
+                    android:id="@+id/et_input_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan nilai suhu"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:padding="14dp"
+                    android:textColorHint="@color/colorHint"
+                    android:textSize="20sp"
+                    app:tint="?attr/colorOnSurface"
+                    tools:ignore="Autofill" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- KARTU PILIHAN SPINNER (SUMBER & TARGET) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_spinner"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+            app:cardElevation="8dp"
+            app:layout_constraintTop_toBottomOf="@id/card_input"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:tint="?attr/colorOnSurface">
+
+                <!-- Pilihan Sumber (Source) -->
+                <TextView
+                    android:id="@+id/tv_label_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Konversi Dari"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinner_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/temperature_units"
+                    android:padding="12dp"
+                    app:tint="?attr/colorSurfaceContainerHigh"
+                    android:spinnerMode="dropdown"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOnSurface"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Pilihan Tujuan (Target) -->
+                <TextView
+                    android:id="@+id/tv_label_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Konversi Ke"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="8dp"/>
+
+                <Spinner
+                    android:id="@+id/spinner_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/temperature_units"
+                    android:padding="12dp"
+                    app:tint="?attr/colorSurfaceContainerHigh"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tombol Konversi -->
+
+
+        <!-- KARTU HASIL OUTPUT -->
+
+        <Button
+            android:id="@+id/btn_convert"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/colorButtonBackground"
+            android:elevation="8dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="Konversikan"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:translationZ="8dp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.84"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_output" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_output"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+            app:layout_constraintTop_toTopOf="@id/card_input"
+            app:layout_constraintStart_toEndOf="@id/card_input"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil Konversi:"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_output_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0 °C"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

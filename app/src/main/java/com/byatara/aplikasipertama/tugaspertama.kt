@@ -89,41 +89,14 @@ class tugaspertama : AppCompatActivity(), ExitConfirmationFragment.ExitDialogLis
         }
 
         cardMenuContact.setOnClickListener {
-            val emailAddress = "gitaris.byan@gmail.com"
-            openEmailContact(emailAddress)
+            val githubUrl = "https://github.com/claveora"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl))
+            startActivity(intent)
+            Toast.makeText(this, "Menuju GitHub Claveora", Toast.LENGTH_SHORT).show()
         }
 
         cardMenuExit.setOnClickListener {
             ExitConfirmationFragment().show(supportFragmentManager, "ExitConfirmationDialog")
-        }
-    }
-
-    private fun openEmailContact(emailAddress: String) {
-        try {
-            // 1. Buat Intent dengan aksi ACTION_SEND
-            val emailIntent = Intent(Intent.ACTION_SEND).apply {
-                // Tipe MIME yang menyarankan aplikasi email (RFC822)
-                type = "message/rfc822"
-                // Menentukan alamat penerima
-                putExtra(Intent.EXTRA_EMAIL, arrayOf(emailAddress))
-                // Menentukan subjek email
-                putExtra(Intent.EXTRA_SUBJECT, "Pertanyaan dari Aplikasi Android Anda")
-                // Menentukan isi email awal (opsional)
-                putExtra(Intent.EXTRA_TEXT, "Halo, saya ingin mengajukan pertanyaan terkait aplikasi.")
-            }
-
-            // 2. Cek apakah ada aplikasi yang bisa menangani intent
-            if (emailIntent.resolveActivity(packageManager) != null) {
-                // 3. Tampilkan pemilih (chooser) aplikasi agar user bisa memilih aplikasi email
-                startActivity(Intent.createChooser(emailIntent, "Kirim email menggunakan:"))
-                Toast.makeText(this, "Membuka pilihan aplikasi", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this, "Tidak ada aplikasi email yang ditemukan untuk mengirim pesan.", Toast.LENGTH_LONG).show()
-            }
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Toast.makeText(this, "Gagal membuka aplikasi Email: ${e.message}", Toast.LENGTH_LONG).show()
         }
     }
 
