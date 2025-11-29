@@ -4,8 +4,8 @@
 Proyek ini dibuat untuk memahami struktur dasar aplikasi Android, cara kerja Activity, layout XML, serta build system Gradle.
 
 ## ✨ Fitur Utama
-- Struktur project Android Studio lengkap dan rapi.
-- Implementasi dasar Activity menggunakan Kotlin.
+- Mode gelap bisa dijalankan.
+- Ketika mode gelap ikon, teks dan sebagainya juga berubah warna menyesuaikan mode gelap.
 - Layout XML sederhana sebagai contoh dasar UI.
 - Konfigurasi Gradle minimal (menggunakan Kotlin DSL).
 - Sangat cocok untuk pemula yang baru mulai belajar Android.
