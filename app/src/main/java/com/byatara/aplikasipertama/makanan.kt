@@ -1,59 +1,116 @@
 package com.byatara.aplikasipertama
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class makanan : AppCompatActivity() {
+
+    private val daftarPesanan = ArrayList<Pesanan>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        // Menggunakan layout yang sesuai dengan file XML Anda (MenuPesananLayout)
         setContentView(R.layout.activity_makanan)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
-        // Jangan lupa memanggil fungsi setupListeners di sini
-        setupListeners()
-    }
-
-    private fun setupListeners() {
-        // Inisialisasi tombol menggunakan findViewById
         val btnLanjut = findViewById<Button>(R.id.btn_lanjut)
 
-        // Inisialisasi input untuk mengambil data (Opsional, agar bisa dihitung)
-        val etNominal1 = findViewById<EditText>(R.id.et_nominal)  // Creamy Latte (20k)
-        val etNominal2 = findViewById<EditText>(R.id.et_nominal2) // Americano (15k)
-        val etNominal3 = findViewById<EditText>(R.id.et_nominal3) // Latte (15k)
-
         btnLanjut.setOnClickListener {
-            try {
-                // Contoh logika sederhana menghitung total (bisa disesuaikan)
-                val jumlah1 = etNominal1.text.toString().toIntOrNull() ?: 0
-                val jumlah2 = etNominal2.text.toString().toIntOrNull() ?: 0
-                val jumlah3 = etNominal3.text.toString().toIntOrNull() ?: 0
+            daftarPesanan.clear() // Reset list sebelum mendata ulang
 
-                val totalHarga = (jumlah1 * 20000) + (jumlah2 * 15000) + (jumlah3 * 15000)
+            // --- PROSES MINUMAN ---
+            // 1. Cappucino
+            prosesItem(
+                "Cappucino",
+                findViewById(R.id.tv_menu_price),
+                findViewById(R.id.et_nominal),
+                findViewById(R.id.rg_temperature)
+            )
 
-                // Membuat Intent ke Activity nota (Diubah dari hasillform ke nota)
+            // 2. Americano
+            prosesItem(
+                "Americano",
+                findViewById(R.id.tv_menu_price2),
+                findViewById(R.id.et_nominal2),
+                findViewById(R.id.rg_temperature2)
+            )
+
+            // 3. Butterscotch
+            prosesItem(
+                "Butterscotch",
+                findViewById(R.id.tv_menu_price3),
+                findViewById(R.id.et_nominal3),
+                findViewById(R.id.rg_temperature3)
+            )
+
+            // --- PROSES MAKANAN (Tanpa Suhu) ---
+            // 4. Croissant
+            prosesItem(
+                "Croissant",
+                findViewById(R.id.tv_menu_price4),
+                findViewById(R.id.et_nominal4),
+                null
+            )
+
+            // 5. French Toast
+            prosesItem(
+                "French Toast",
+                findViewById(R.id.tv_menu_price5),
+                findViewById(R.id.et_nominal5),
+                null
+            )
+
+            // 6. Spaghetti (ID di XML tv_menu_toast1)
+            prosesItem(
+                "Spaghetti",
+                findViewById(R.id.tv_menu_price6),
+                findViewById(R.id.et_nominal6),
+                null
+            )
+
+            // --- CEK DAN PINDAH HALAMAN ---
+            if (daftarPesanan.isNotEmpty()) {
                 val intent = Intent(this, nota::class.java)
+                intent.putParcelableArrayListExtra("DATA_PESANAN", daftarPesanan)
                 startActivity(intent)
+            } else {
+                Toast.makeText(this, "Mohon pilih minimal satu menu", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
-            } catch (e: Exception) {
-                Toast.makeText(this, "Terjadi kesalahan input", Toast.LENGTH_SHORT).show()
+    private fun prosesItem(nama: String, tvHarga: TextView, etJumlah: EditText, rgSuhu: RadioGroup?) {
+        val jumlahStr = etJumlah.text.toString()
+
+        if (jumlahStr.isNotEmpty()) {
+            val jumlah = jumlahStr.toInt()
+            if (jumlah > 0) {
+                // Parse harga: "Rp. 17.000" -> ambil angka saja -> 17000
+                val hargaStr = tvHarga.text.toString().replace("[^0-9]".toRegex(), "")
+                val harga = hargaStr.toInt()
+
+                var varian: String? = "-"
+
+                // Cek jika ada pilihan suhu (Minuman)
+                if (rgSuhu != null) {
+                    val selectedId = rgSuhu.checkedRadioButtonId
+                    if (selectedId != -1) {
+                        val radioButton = findViewById<RadioButton>(selectedId)
+                        varian = radioButton.text.toString()
+                    } else {
+                        // Default jika user lupa pilih suhu
+                        varian = "Panas"
+                    }
+                }
+
+                val subtotal = harga * jumlah
+                daftarPesanan.add(Pesanan(nama, harga, jumlah, varian, subtotal))
             }
         }
     }

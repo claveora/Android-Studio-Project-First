@@ -1,604 +1,618 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorScreenBackground"
-    android:fillViewport="true">
+    tools:context=".makanan">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <ScrollView
+        android:id="@+id/content_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_lanjut_container"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Menu Pesanan"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#A1866F"
+                android:gravity="center"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coffeeenak.id"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/judul"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/label_minuman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minuman"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/subtitle"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu1"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_minuman">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/cappu"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Cappucino"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 17.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_name" />
+
+                    <EditText
+                        android:id="@+id/et_nominal"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_temperature"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_price"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rb_es"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Es"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_panas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Panas"
+                            android:textSize="14sp"/>
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu2"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_menu1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/americano"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_americano"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Americano"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon2"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon2"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal2" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 15.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_americano" />
+
+                    <EditText
+                        android:id="@+id/et_nominal2"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_temperature2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_price2"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rb_es2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Es"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_panas2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Panas"
+                            android:textSize="14sp"/>
+                    </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu3"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_menu2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/butter"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_butterscotch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Butterscotch"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon3"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon3"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal3" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 15.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_butterscotch"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_butterscotch" />
+
+                    <EditText
+                        android:id="@+id/et_nominal3"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_temperature3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_butterscotch"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_price3"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rb_es3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Es"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="16dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_panas3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Panas"
+                            android:textSize="14sp"/>
+                    </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/label_makanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Makanan"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/card_menu3"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu4"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_makanan">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/quasong"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_croissant"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Croissant"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon4"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon4"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal4" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 15.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_croissant"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_croissant" />
+
+                    <EditText
+                        android:id="@+id/et_nominal4"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price4"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu5"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_menu4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/toast"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_toast"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="French Toast"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon5"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon5"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal5" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 10.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_toast"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_toast" />
+
+                    <EditText
+                        android:id="@+id/et_nominal5"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price5"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_menu6"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_menu5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_menu_icon6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/spage"
+                        app:civ_border_color="?attr/colorOnSurface"
+                        app:civ_border_width="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_toast1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Spaghetti"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/iv_menu_icon6"
+                        app:layout_constraintTop_toTopOf="@id/iv_menu_icon6"
+                        app:layout_constraintEnd_toStartOf="@+id/et_nominal6" />
+
+                    <TextView
+                        android:id="@+id/tv_menu_price6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp. 23.000"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toStartOf="@id/tv_menu_toast1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_menu_toast1" />
+
+                    <EditText
+                        android:id="@+id/et_nominal6"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Jumlah"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        app:tint="?attr/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price6"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_lanjut_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        tools:context=".makanan">
-
-        <!-- Judul Menu Pesanan -->
-        <TextView
-            android:id="@+id/judul"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="Menu Pesanan"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#A1866F"
-            android:gravity="center"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Coffeeenak.id"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@+id/judul"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- Label Minuman -->
-        <TextView
-            android:id="@+id/label_minuman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Minuman"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryText"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/subtitle"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <!-- CardView Menu 1 - Cappuccino -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu1"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_minuman">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/cappu"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_name"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Cappucino"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 17.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_name"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_name" />
-
-                <EditText
-                    android:id="@+id/et_nominal"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price"/>
-
-                <RadioGroup
-                    android:id="@+id/rg_temperature"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_name"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_price"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <RadioButton
-                        android:id="@+id/rb_es"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Es"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="16dp"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_panas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Panas"
-                        android:textSize="14sp"/>
-                </RadioGroup>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CardView Menu 2 - Americano -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu2"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_menu1">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/americano"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_americano"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Americano"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon2"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon2"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal2" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 15.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_americano" />
-
-                <EditText
-                    android:id="@+id/et_nominal2"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2"/>
-
-                <RadioGroup
-                    android:id="@+id/rg_temperature2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_price2"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <RadioButton
-                        android:id="@+id/rb_es2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Es"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="16dp"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_panas2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Panas"
-                        android:textSize="14sp"/>
-                </RadioGroup>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CardView Menu 3 - Butterscotch -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu3"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_menu2">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon3"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/butter"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_butterscotch"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Butterscotch"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon3"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon3"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal3" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 15.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_butterscotch"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_butterscotch" />
-
-                <EditText
-                    android:id="@+id/et_nominal3"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3"/>
-
-                <RadioGroup
-                    android:id="@+id/rg_temperature3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_butterscotch"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_price3"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <RadioButton
-                        android:id="@+id/rb_es3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Es"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="16dp"/>
-
-                    <RadioButton
-                        android:id="@+id/rb_panas3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Panas"
-                        android:textSize="14sp"/>
-                </RadioGroup>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Label Makanan -->
-        <TextView
-            android:id="@+id/label_makanan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Makanan"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="16dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryText"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/card_menu3"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <!-- CardView Menu 4 - Croissant -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu4"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="12dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_makanan">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/quasong"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_croissant"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Croissant"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon4"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon4"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal4" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 15.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_croissant"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_croissant" />
-
-                <EditText
-                    android:id="@+id/et_nominal4"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price4"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CardView Menu 5 - French Toast -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu5"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_menu4">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/toast"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_toast"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="French Toast"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon5"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon5"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal5" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 10.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_toast"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_toast" />
-
-                <EditText
-                    android:id="@+id/et_nominal5"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price5"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- CardView Menu 6 - French Toast -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_menu6"
-            style="@style/Widget.Material3.CardView.Filled"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardCornerRadius="16dp"
-            app:strokeWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_menu5">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_menu_icon6"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/toast"
-                    app:civ_border_color="?attr/colorOnSurface"
-                    app:civ_border_width="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_menu_toast1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="French Toast"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/iv_menu_icon6"
-                    app:layout_constraintTop_toTopOf="@id/iv_menu_icon6"
-                    app:layout_constraintEnd_toStartOf="@+id/et_nominal6" />
-
-                <TextView
-                    android:id="@+id/tv_menu_price6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rp. 10.000"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="14sp"
-                    android:layout_marginTop="4dp"
-                    app:layout_constraintStart_toStartOf="@id/tv_menu_toast1"
-                    app:layout_constraintTop_toBottomOf="@id/tv_menu_toast1" />
-
-                <EditText
-                    android:id="@+id/et_nominal6"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Jumlah"
-                    android:inputType="number"
-                    android:textAlignment="center"
-                    android:textSize="14sp"
-                    android:padding="8dp"
-                    app:tint="?attr/colorOnSurface"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_menu_price6"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Tombol Lanjutkan (Dibuat Center) -->
+        app:cardElevation="8dp"
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="0dp"
+        android:backgroundTint="@color/colorScreenBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
         <Button
             android:id="@+id/btn_lanjut"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/card_menu5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
             android:text="Lanjutkan"
-            android:gravity="center"
             android:textColor="@color/colorButtonText"
             android:backgroundTint="@color/colorButtonBackground"
             />
+    </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
