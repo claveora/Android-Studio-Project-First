@@ -15,93 +15,118 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Header Nota -->
         <TextView
             android:id="@+id/judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nota Pesanan"
+            android:text="Nota Pembayaran"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#A1866F"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:gravity="center"
-            android:layout_gravity="center"
             android:textStyle="bold"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Coffeeenak.id"
             android:textColor="@color/colorPrimaryText"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="16dp"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="360dp"
+        <!-- Nama Pemesan -->
+        <TextView
+            android:id="@+id/txtNamaPemesan"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
+            android:text="Pemesan: [Nama Pemesan]"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="17sp"
+            android:textStyle="normal"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Garis Pemisah Visual -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="14dp"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Card Detail Pesanan -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
             app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-            app:cardElevation="6dp">
+            android:layout_marginHorizontal="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Daftar Pesanan:"
+                    android:text="Rincian Pesanan"
                     android:textStyle="bold"
-                    android:textSize="17sp"
+                    android:textSize="20sp"
                     android:textColor="?attr/colorOnSurface"
-                    android:layout_marginBottom="12dp"/>
+                    android:layout_marginBottom="12dp" />
 
-                <!-- Kontainer Pesanan akan diisi secara dinamis oleh Kotlin -->
+                <!-- Container untuk detail pesanan akan diisi secara dinamis oleh Kotlin -->
                 <LinearLayout
                     android:id="@+id/containerPesanan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryText"
                     android:orientation="vertical" />
 
+                <!-- Garis Pemisah sebelum Total -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#CCCCCC"
+                    android:background="?attr/colorOutline"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp" />
 
-                <!-- TextView untuk menampilkan Total Harga -->
+                <!-- TextView untuk menampilkan Total Harga (Dibuat lebih besar dan menonjol) -->
                 <TextView
                     android:id="@+id/txtTotal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total: Rp0"
+                    android:text="TOTAL: Rp0"
                     android:textStyle="bold"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="17sp" />
+                    android:textSize="24sp"
+                    android:textColor="?attr/colorPrimary"
+                    android:gravity="end"
+                    tools:text="TOTAL: Rp0"
+                    />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
+        <!-- Tombol Bayar -->
         <Button
             android:id="@+id/btnSelesai"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bayar"
+            android:text="Selesaikan Pembayaran"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="16dp"
             android:backgroundTint="@color/colorButtonBackground"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:paddingVertical="14dp"/>
 
     </LinearLayout>
 

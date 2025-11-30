@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText // Import tambahan untuk EditText
 
 class makanan : AppCompatActivity() {
 
@@ -20,11 +21,22 @@ class makanan : AppCompatActivity() {
         setContentView(R.layout.activity_makanan)
 
         val btnLanjut = findViewById<Button>(R.id.btn_lanjut)
+        // Dapatkan referensi ke TextInputEditText untuk nama pemesan
+        val etNamaPemesan = findViewById<TextInputEditText>(R.id.et_nama_pemesan)
 
         btnLanjut.setOnClickListener {
             daftarPesanan.clear() // Reset list sebelum mendata ulang
 
-            // --- PROSES MINUMAN ---
+            // --- FOKUS: Ambil Nama Pemesan ---
+            val namaPemesan = etNamaPemesan.text.toString().trim()
+            if (namaPemesan.isEmpty()) {
+                Toast.makeText(this, "Nama Pemesan tidak boleh kosong!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // Berhenti jika nama kosong
+            }
+            // ------------------------------------
+
+            // ... (Kode prosesItem lainnya sama) ...
+
             // 1. Cappucino
             prosesItem(
                 "Cappucino",
@@ -49,7 +61,6 @@ class makanan : AppCompatActivity() {
                 findViewById(R.id.rg_temperature3)
             )
 
-            // --- PROSES MAKANAN (Tanpa Suhu) ---
             // 4. Croissant
             prosesItem(
                 "Croissant",
@@ -66,7 +77,7 @@ class makanan : AppCompatActivity() {
                 null
             )
 
-            // 6. Spaghetti (ID di XML tv_menu_toast1)
+            // 6. Spaghetti
             prosesItem(
                 "Spaghetti",
                 findViewById(R.id.tv_menu_price6),
@@ -78,6 +89,11 @@ class makanan : AppCompatActivity() {
             if (daftarPesanan.isNotEmpty()) {
                 val intent = Intent(this, nota::class.java)
                 intent.putParcelableArrayListExtra("DATA_PESANAN", daftarPesanan)
+
+                // --- FOKUS: Kirim Nama Pemesan ke Activity Nota ---
+                intent.putExtra("NAMA_PEMESAN", namaPemesan)
+                // ----------------------------------------------------
+
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Mohon pilih minimal satu menu", Toast.LENGTH_SHORT).show()
@@ -86,6 +102,7 @@ class makanan : AppCompatActivity() {
     }
 
     private fun prosesItem(nama: String, tvHarga: TextView, etJumlah: EditText, rgSuhu: RadioGroup?) {
+        // ... (Fungsi ini tidak berubah, tetap sama seperti sebelumnya) ...
         val jumlahStr = etJumlah.text.toString()
 
         if (jumlahStr.isNotEmpty()) {

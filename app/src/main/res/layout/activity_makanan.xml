@@ -16,14 +16,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/btn_lanjut_container"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/judul"
@@ -38,7 +38,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/subtitle"
@@ -54,6 +54,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <!-- BARU: Kolom Input Nama Pemesan -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_nama_pemesan"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:hint="Nama Pemesan"
+                app:boxBackgroundMode="outline"
+                android:textColorHint="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/subtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_nama_pemesan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- END BARU -->
+
             <TextView
                 android:id="@+id/label_minuman"
                 android:layout_width="wrap_content"
@@ -64,9 +92,10 @@
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimaryText"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/subtitle"
+                app:layout_constraintTop_toBottomOf="@id/til_nama_pemesan"
                 app:layout_constraintStart_toStartOf="parent"/>
 
+            <!-- CARD MENU 1: Cappucino -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu1"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -109,7 +138,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal" />
 
                     <TextView
                         android:id="@+id/tv_menu_price"
@@ -122,19 +151,32 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_name"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_name" />
 
-                    <EditText
-                        android:id="@+id/et_nominal"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price"/>
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
 
                     <RadioGroup
                         android:id="@+id/rg_temperature"
@@ -165,6 +207,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- CARD MENU 2: Americano -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu2"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -207,7 +250,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon2"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon2"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal2" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal2" />
 
                     <TextView
                         android:id="@+id/tv_menu_price2"
@@ -220,19 +263,32 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_americano"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_americano" />
 
-                    <EditText
-                        android:id="@+id/et_nominal2"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2"/>
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
 
                     <RadioGroup
                         android:id="@+id/rg_temperature2"
@@ -262,6 +318,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- CARD MENU 3: Butterscotch -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu3"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -304,7 +361,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon3"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon3"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal3" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal3" />
 
                     <TextView
                         android:id="@+id/tv_menu_price3"
@@ -317,19 +374,32 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_butterscotch"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_butterscotch" />
 
-                    <EditText
-                        android:id="@+id/et_nominal3"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3"/>
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
 
                     <RadioGroup
                         android:id="@+id/rg_temperature3"
@@ -372,6 +442,7 @@
                 app:layout_constraintTop_toBottomOf="@id/card_menu3"
                 app:layout_constraintStart_toStartOf="parent"/>
 
+            <!-- CARD MENU 4: Croissant -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu4"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -414,7 +485,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon4"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon4"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal4" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal4" />
 
                     <TextView
                         android:id="@+id/tv_menu_price4"
@@ -427,23 +498,37 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_croissant"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_croissant" />
 
-                    <EditText
-                        android:id="@+id/et_nominal4"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price4"/>
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- CARD MENU 5: French Toast -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu5"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -486,7 +571,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon5"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon5"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal5" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal5" />
 
                     <TextView
                         android:id="@+id/tv_menu_price5"
@@ -499,22 +584,36 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_toast"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_toast" />
 
-                    <EditText
-                        android:id="@+id/et_nominal5"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price5"/>
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price5">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- CARD MENU 6: Spaghetti -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_menu6"
                 style="@style/Widget.Material3.CardView.Filled"
@@ -558,7 +657,7 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/iv_menu_icon6"
                         app:layout_constraintTop_toTopOf="@id/iv_menu_icon6"
-                        app:layout_constraintEnd_toStartOf="@+id/et_nominal6" />
+                        app:layout_constraintEnd_toStartOf="@+id/til_nominal6" />
 
                     <TextView
                         android:id="@+id/tv_menu_price6"
@@ -571,19 +670,32 @@
                         app:layout_constraintStart_toStartOf="@id/tv_menu_toast1"
                         app:layout_constraintTop_toBottomOf="@id/tv_menu_toast1" />
 
-                    <EditText
-                        android:id="@+id/et_nominal6"
-                        android:layout_width="65dp"
+                    <!-- PERUBAHAN: Mengganti EditText menjadi TextInputLayout untuk Jumlah (nominal) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_nominal6"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:hint="Jumlah"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:padding="8dp"
-                        app:tint="?attr/colorOnSurface"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxBackgroundMode="outline"
+                        android:textColorHint="@android:color/darker_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price6"/>
+                        app:layout_constraintBottom_toBottomOf="@id/tv_menu_price6">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_nominal6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:textSize="14sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <!-- END PERUBAHAN -->
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

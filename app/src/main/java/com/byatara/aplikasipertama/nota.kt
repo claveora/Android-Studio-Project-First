@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
-import java.text.DecimalFormat // Import baru
-import java.text.DecimalFormatSymbols // Import baru
+import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 
 class nota : AppCompatActivity() {
 
@@ -23,8 +23,15 @@ class nota : AppCompatActivity() {
         val container = findViewById<LinearLayout>(R.id.containerPesanan)
         val txtTotal = findViewById<TextView>(R.id.txtTotal)
         val btnBayar = findViewById<Button>(R.id.btnSelesai)
+        // Dapatkan referensi ke TextView Nama Pemesan
+        val txtNamaPemesan = findViewById<TextView>(R.id.txtNamaPemesan)
 
         val listPesanan = intent.getParcelableArrayListExtra<Pesanan>("DATA_PESANAN")
+
+        // --- FOKUS: Menerima dan Menampilkan Nama Pemesan ---
+        val namaPemesan = intent.getStringExtra("NAMA_PEMESAN") ?: "Anonim"
+        txtNamaPemesan.text = "Pemesan: $namaPemesan"
+        // ----------------------------------------------------
 
         var totalBayar = 0
 
@@ -57,6 +64,7 @@ class nota : AppCompatActivity() {
 
     // Fungsi untuk membuat Tampilan Text per Item Pesanan
     private fun createItemView(pesanan: Pesanan): LinearLayout {
+        // ... (Fungsi ini tidak berubah, tetap sama seperti sebelumnya) ...
         val layout = LinearLayout(this)
         layout.orientation = LinearLayout.HORIZONTAL
         layout.weightSum = 1f
