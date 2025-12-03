@@ -1,5 +1,3 @@
-// ExitConfirmationFragment.kt
-
 package com.byatara.aplikasipertama // ⬅️ HARUS SAMA DENGAN NAMA PACKAGE ACTIVITY
 
 import android.content.Context
@@ -37,7 +35,6 @@ class ExitConfirmationFragment : DialogFragment() { // ⬅️ NAMA KELAS HARUS S
         savedInstanceState: Bundle?
     ): View? {
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        // Ganti R.layout.dialog_custom_exit jika nama file XML Anda berbeda
         return inflater.inflate(R.layout.activity_exit, container, false)
     }
 
