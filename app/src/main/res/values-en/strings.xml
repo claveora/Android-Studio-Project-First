@@ -1,15 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="menuutama">Main menu</string>
-    <string name="MenuAplikasi">Aplication Menu</string>
-    <string name="Menulain">More Menu</string>
+    <string name="temp_converter_title">Interactive Temperature Converter</string>
+    <string name="app_subtitle">Coffeeenak.id</string>
+    <string name="temp_initial_temperature_label">Initial Temperature</string>
+    <string name="temp_input_hint">Enter Temperature Value</string>
+    <string name="temp_convert_from_label">Convert From</string>
+    <string name="temp_convert_to_label">Convert To</string>
+    <string name="temp_convert_button">Convert</string>
+    <string name="temp_conversion_result_label">Conversion Result:</string>
+    <string name="temp_initial_result">0.0 °C</string>
+    <string name="sapa">Hi, Byatara!</string>
+    <string name="menuutama">Main Menu</string>
+    <string name="Menulain">Another Menu</string>
     <string name="Menutambahan">Additional Menu</string>
-    <string name="menu">Menu</string>
+    <string name="MenuAplikasi">Application Menu</string>
+    <string name="Menupesanan">Order Menu</string>
+    <string name="namapemesan">Customer Name</string>
+    <string name="minuman">Drink</string>
+    <string name="makanan">Food</string>
+    <string name="jumlah">Quantity</string>
+    <string name="es">Ice</string>
+    <string name="profil">Profile</string>
+    <string name="Edit_Profil_Kamu">Edit Your Profile</string>
+    <string name="sekolah">School</string>
+    <string name="kelas">Class</string>
+    <string name="lagu">Song</string>
+    <string name="hoby">Hobby</string>
+    <string name="portofolio">Portfolio</string>
+    <string name="aktivitas">Activity</string>
+    <string name="datapribadi">Personal Data</string>
+    <string name="pemrograman">Programming</string>
+    <string name="framework">Framework</string>
+    <string name="gender">Gender</string>
+    <string name="uh">Date of Birth</string>
+    <string name="lanjutkan">Continue</string>
+    <string name="panas">Hot</string>
+    <string name="menu">List</string>
     <string name="form">Form</string>
     <string name="calculator">Calculator</string>
     <string name="temperature">Temperature</string>
-    <string name="contact">Our Contact</string>
+    <string name="contact">Contact Us</string>
     <string name="exit">Exit</string>
-    <string name="app_name">First Aplication</string>
-    <string name="sapa">Hello, Byatara!</string>
+    <string name="app_name">First Application</string>
+
+    <!-- Exit Confirmation -->
+    <string name="exit_confirmation_title">Are you sure you want to exit?</string>
+    <string name="exit_confirmation_cancel">Cancel</string>
+    <string name="exit_confirmation_yes">Yes</string>
+
+    <!-- Form Pendaftaran -->
+    <string name="form_registration_title">Registration Form</string>
+    <string name="form_hint_name">Enter Your Name</string>
+    <string name="form_hint_address">Enter Your Address</string>
+    <string name="form_hint_phone">Enter Your Phone Number</string>
+    <string name="form_label_religion">Religion</string>
+    <string name="form_label_gender">Gender</string>
+    <string name="form_gender_male">Male</string>
+    <string name="form_gender_female">Female</string>
+    <string name="form_label_hobby">Hobby</string>
+    <string name="form_hobby_reading">Reading</string>
+    <string name="form_hobby_writing">Writing</string>
+    <string name="form_hobby_music">Listening to Music</string>
+    <string name="form_hobby_cooking">Cooking</string>
+    <string name="form_button_save">Save</string>
+
+    <!-- Hasil Form -->
+    <string name="form_result_title">Form Result</string>
+    <string name="form_result_label_name">Name</string>
+    <string name="form_result_label_address">Address</string>
+    <string name="form_result_label_phone">Phone Number</string>
+    <string name="form_result_label_religion">Religion</string>
+    <string name="form_result_label_gender">Gender</string>
+    <string name="form_result_label_hobby">Hobby</string>
+    <string name="form_result_initial_value">-</string>
+    <string name="form_result_button_back">Back</string>
+
+    <!-- Nota Pembayaran -->
+    <string name="receipt_title">Payment Receipt</string>
+    <string name="receipt_customer_name_placeholder">Customer: %s</string>
+    <string name="receipt_order_details">Order Details</string>
+    <string name="receipt_total_placeholder">TOTAL: %s</string>
+    <string name="receipt_button_finish_payment">Finish Payment</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_brand_subtitle">Accompany your days with\nthe delicious nuances of coffee</string>
+    <string name="splash_loading">Loading...</string>
+    <string name="splash_version">Ver 1.0.23</string>
+
+    <string-array name="list_agama">
+        <item>Islam</item>
+        <item>Christian</item>
+        <item>Catholic</item>
+        <item>Hindu</item>
+        <item>Buddha</item>
+        <item>Confucianism</item>
+    </string-array>
+    <string-array name="temperature_units">
+        <item>Celsius (°C)</item>
+        <item>Fahrenheit (°F)</item>
+        <item>Kelvin (K)</item>
+    </string-array>
+
 </resources>

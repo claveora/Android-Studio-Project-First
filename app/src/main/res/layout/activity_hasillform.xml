@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="100dp"
             android:paddingBottom="20dp"
@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hasil Form"
+                        android:text="@string/form_result_title"
                         android:textAppearance="?android:attr/textAppearanceLarge"
                         android:textStyle="bold"
                         android:textColor="#A1866F"
@@ -57,7 +57,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nama"
+                        android:text="@string/form_result_label_name"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -67,7 +67,7 @@
                         android:id="@+id/tvNama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="16dp" />
@@ -76,7 +76,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Alamat"
+                        android:text="@string/form_result_label_address"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -86,7 +86,7 @@
                         android:id="@+id/tvAlamat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="16dp" />
@@ -95,7 +95,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nomor HP"
+                        android:text="@string/form_result_label_phone"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -105,7 +105,7 @@
                         android:id="@+id/tvNomor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="16dp" />
@@ -114,7 +114,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Agama"
+                        android:text="@string/form_result_label_religion"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -124,7 +124,7 @@
                         android:id="@+id/tvAgama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="16dp" />
@@ -133,7 +133,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Gender"
+                        android:text="@string/form_result_label_gender"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -143,7 +143,7 @@
                         android:id="@+id/tvGender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="16dp" />
@@ -152,7 +152,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hobi"
+                        android:text="@string/form_result_label_hobby"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textStyle="bold"
                         android:textColor="?android:attr/textColorSecondary"
@@ -162,7 +162,7 @@
                         android:id="@+id/tvHobi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/form_result_initial_value"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="?android:attr/textColorPrimary"
                         android:layout_marginBottom="8dp" />
@@ -176,7 +176,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_gravity="center_horizontal"
-                android:text="Kembali"
+                android:text="@string/form_result_button_back"
                 android:textSize="16sp"
                 android:textColor="@color/colorButtonText"
                 android:backgroundTint="@color/colorButtonBackground" />

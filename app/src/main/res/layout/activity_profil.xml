@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Profil"
+        android:text="@string/profil"
         android:textColor="?attr/colorOnSurface"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:paddingHorizontal="24dp"
-            android:text="Edit Profil Kamu"
+            android:text="@string/Edit_Profil_Kamu"
             android:textColor="@color/colorPrimaryText"
             app:backgroundTint="?attr/colorSurfaceContainerHigh"
             app:cornerRadius="24dp"
@@ -96,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Pribadi"
+                    android:text="@string/datapribadi"
                     android:textColor="?attr/colorPrimary"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Ulang Tahun"
+                        android:text="@string/uh"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -154,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Gender"
+                        android:text="@string/gender"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -194,7 +194,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Portofolio"
+                    android:text="@string/portofolio"
                     android:textColor="?attr/colorPrimary"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -218,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Sekolah"
+                        android:text="@string/sekolah"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -251,7 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Kelas"
+                        android:text="@string/kelas"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -289,7 +289,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Aktivitas"
+                    android:text="@string/aktivitas"
                     android:textColor="?attr/colorPrimary"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -314,7 +314,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Lagu"
+                        android:text="@string/lagu"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -348,7 +348,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Hoby"
+                        android:text="@string/hoby"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -387,7 +387,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pemrograman"
+                    android:text="@string/pemrograman"
                     android:textColor="?attr/colorPrimary"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -411,7 +411,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Pemrograman"
+                        android:text="@string/pemrograman"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 
@@ -445,7 +445,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
-                        android:text="Framework"
+                        android:text="@string/framework"
                         android:textColor="?attr/colorOnSurface"
                         android:textSize="16sp" />
 

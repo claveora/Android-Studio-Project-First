@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:text="Yakin Ingin Keluar?"
+            android:text="@string/exit_confirmation_title"
             android:textColor="?attr/colorOnSurface"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Batal"
+                android:text="@string/exit_confirmation_cancel"
                 android:textColor="@color/colorPrimaryText" />
 
             <com.google.android.material.button.MaterialButton
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Ya"
+                android:text="@string/exit_confirmation_yes"
                 android:textColor="?attr/colorOnError"
                 app:backgroundTint="?attr/colorError" />
         </LinearLayout>
