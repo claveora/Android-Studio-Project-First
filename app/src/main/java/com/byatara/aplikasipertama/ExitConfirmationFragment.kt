@@ -1,4 +1,4 @@
-package com.byatara.aplikasipertama // ⬅️ HARUS SAMA DENGAN NAMA PACKAGE ACTIVITY
+package com.byatara.aplikasipertama
 
 import android.content.Context
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.button.MaterialButton
-// Import R Anda mungkin berbeda
 
-class ExitConfirmationFragment : DialogFragment() { // ⬅️ NAMA KELAS HARUS SAMA PERSIS
+class ExitConfirmationFragment : DialogFragment() {
 
     // Interface untuk komunikasi dengan Activity
     interface ExitDialogListener { // ⬅️ NAMA INTERFACE HARUS SAMA PERSIS

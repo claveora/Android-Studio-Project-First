@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="16dp"
-        android:text="Hai, Byatara!"
+        android:text="@string/sapa"
         android:textColor="?attr/colorOnSurface"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -70,7 +70,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Menu Aplikasi"
+                        android:text="@string/MenuAplikasi"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold"
                         android:textSize="20sp" />
@@ -104,7 +104,7 @@
 
                                 <ImageView
                                     android:layout_width="48dp"
-                                    android:layout_height="48dp"
+                                    android:layout_height="61dp"
                                     android:src="@drawable/list"
                                     app:tint="?attr/colorOnSurface"
                                     tools:ignore="ContentDescription" />
@@ -113,7 +113,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Menu"
+                                    android:text="@string/menu"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />
@@ -150,7 +150,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Form"
+                                    android:text="@string/form"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />
@@ -188,7 +188,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Kalkulator"
+                                    android:text="@string/calculator"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />
@@ -234,7 +234,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Temperatur"
+                                    android:text="@string/calculator"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />
@@ -271,7 +271,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Kontak Kami"
+                                    android:text="@string/contact"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />
@@ -308,7 +308,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Keluar"
+                                    android:text="@string/exit"
                                     android:textColor="?attr/colorOnError"
                                     android:textStyle="bold"
                                     android:textSize="14sp" />

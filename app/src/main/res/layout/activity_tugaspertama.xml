@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="16dp"
-        android:text="Hai, Byatara!"
+        android:text="@string/sapa"
         android:textColor="?attr/colorOnSurface"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -69,7 +69,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Menu Utama"
+                        android:text="@string/menuutama"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold"
                         android:textSize="18sp" />
@@ -110,7 +110,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Menu"
+                                    android:text="@string/menu"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -144,7 +144,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Form"
+                                    android:text="@string/form"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -174,7 +174,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Menu Lain"
+                        android:text="@string/Menulain"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold"
                         android:textSize="18sp" />
@@ -216,7 +216,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Kalkulator"
+                                    android:text="@string/calculator"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -250,7 +250,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Temperatur"
+                                    android:text="@string/temperature"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -281,7 +281,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Menu Tambahan"
+                        android:text="@string/Menutambahan"
                         android:textColor="?attr/colorOnSurface"
                         android:textStyle="bold"
                         android:textSize="18sp" />
@@ -321,7 +321,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Kontak Kami"
+                                    android:text="@string/contact"
                                     android:textColor="?attr/colorOnSurface"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -355,7 +355,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:text="Keluar"
+                                    android:text="@string/exit"
                                     android:textColor="?attr/colorOnError"
                                     android:textStyle="bold" />
                             </LinearLayout>
